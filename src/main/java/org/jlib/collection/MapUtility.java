@@ -19,7 +19,7 @@
  *     limitations under the License.
  */
 
-package org.jlib.core.collection;
+package org.jlib.collection;
 
 import java.util.HashMap;
 import java.util.Map;
