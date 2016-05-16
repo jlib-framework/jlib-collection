@@ -26,6 +26,8 @@ import java.util.Map;
 
 public final class MapUtility {
 
+    private MapUtility() {}
+
     /**
      * <p>
      * Proxies a newly created {@link HashMap} using a {@link CachingMap}.
@@ -117,6 +119,4 @@ public final class MapUtility {
     public static <Key, Value> Map<Key, Value> cachingHashMap(final Map<Key, Value> sourceMap) {
         return new CachingMap<>(new HashMap<>(sourceMap));
     }
-
-    private MapUtility() {}
 }

@@ -80,7 +80,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
  * @author Igor Akkerman
  */
 public final class CachingList<Item>
-implements List<Item> {
+    implements List<Item> {
 
     /** delegate {@link List} */
     private final List<Item> delegate;
@@ -264,9 +264,11 @@ implements List<Item> {
 
     @Override
     public int size() {
-        return delegate.size();}
+        return delegate.size();
+    }
 
     @Override
     public boolean isEmpty() {
-        return delegate.isEmpty();}
+        return delegate.isEmpty();
+    }
 }
