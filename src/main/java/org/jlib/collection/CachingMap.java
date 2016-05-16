@@ -80,7 +80,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
  * @author Igor Akkerman
  */
 public final class CachingMap<Key, Value>
-implements Map<Key, Value> {
+    implements Map<Key, Value> {
 
     /** delegate {@link Map} */
     private final Map<Key, Value> delegateMap;
