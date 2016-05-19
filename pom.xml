@@ -49,6 +49,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.jlib</groupId>
             <artifactId>jlib-codequality</artifactId>
         </dependency>
