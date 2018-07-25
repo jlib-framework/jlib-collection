@@ -19,7 +19,6 @@
  *     limitations under the License.
  */
 
-
 plugins {
     id 'java'
     id 'base'
@@ -31,3 +30,10 @@ plugins {
 
 apply from: 'jlib.gradle'
 
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
+}
