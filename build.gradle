@@ -28,12 +28,13 @@ plugins {
     id 'net.researchgate.release' version '2.6.0'
 }
 
+version = '1.0.0-SNAPSHOT'
+
+description = 'jlib collection library'
+ext.detailedDescription = 'jlib library providing new collection types'
+
 apply from: 'jlib.gradle'
 
 repositories {
     mavenLocal()
-}
-
-dependencies {
-    implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
 }

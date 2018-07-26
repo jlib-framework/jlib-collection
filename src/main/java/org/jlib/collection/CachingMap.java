@@ -25,8 +25,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import lombok.NonNull;
 
 /**
  * <p>
@@ -130,7 +129,7 @@ public final class CachingMap<Key, Value>
 
     @Override
     @SuppressWarnings({ "ReturnOfNull", "ObjectEquality" })
-    @Nullable
+    /* @Nullable */
     public Value get(final Object key) {
         if (lastLookedUpKey == key)
             return lastLookedUpValue;
@@ -185,7 +184,7 @@ public final class CachingMap<Key, Value>
     /**
      * Clears the last looked up contained Key and Value.
      */
-    @SuppressWarnings("AssignmentToNull")
+    @SuppressWarnings({ "AssignmentToNull", "ConstantConditions" })
     private void clearLastLookedUpItems() {
         lastLookedUpKey = null;
         lastLookedUpValue = null;

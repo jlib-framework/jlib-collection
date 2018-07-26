@@ -29,9 +29,8 @@ import java.util.ListIterator;
 import java.util.Spliterator;
 import java.util.function.UnaryOperator;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * <p>
@@ -91,10 +90,10 @@ public final class CachingList<Item>
     private int lastLookedUpItemIndex;
 
     /** last looked up {@link Item}; {@code null} if unset (for performance reasons) */
-    private @Nullable Object lastLookedUpItem;
+    private /* @Nullable */ Object lastLookedUpItem;
 
     @Override
-    public boolean contains(final @Nullable Object item) {
+    public boolean contains(final /* @Nullable */ Object item) {
         return indexOf(item) != - 1;
     }
 
@@ -113,7 +112,7 @@ public final class CachingList<Item>
     @Override
     @NonNull
     @SuppressWarnings("SuspiciousToArrayCall")
-    public <T> T[] toArray(@NonNull final T[] array) {
+    public <ArrayItem> ArrayItem[] toArray(@NonNull final ArrayItem[] array) {
         return delegate.toArray(array);
     }
 
@@ -163,7 +162,8 @@ public final class CachingList<Item>
     }
 
     @Override
-    public int indexOf(final @Nullable Object item) {
+    @SuppressWarnings("ObjectEquality")
+    public int indexOf(final /* @Nullable */ Object item) {
         if (item == lastLookedUpItem)
             return lastLookedUpItemIndex;
 
@@ -248,7 +248,7 @@ public final class CachingList<Item>
     /**
      * Clears the last looked up contained Key and Item.
      */
-    @SuppressWarnings("AssignmentToNull")
+    @SuppressWarnings({ "AssignmentToNull", "ConstantConditions" })
     private void clearLastLookedUpIndex() {
         lastLookedUpItem = null;
         lastLookedUpItemIndex = - 1;
