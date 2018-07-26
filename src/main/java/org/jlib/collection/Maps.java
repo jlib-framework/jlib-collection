@@ -21,12 +21,13 @@
 
 package org.jlib.collection;
 
+import lombok.experimental.UtilityClass;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public final class MapUtility {
-
-    private MapUtility() {}
+@UtilityClass
+public final class Maps {
 
     /**
      * <p>

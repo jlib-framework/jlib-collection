@@ -7,11 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jlib-collection" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jlib-collection" target="8" />
+      <module name="jlib-collection_main" target="1.8" />
+      <module name="jlib-collection_test" target="1.8" />
+      <module name="jlib-collectionX_main" target="1.8" />
+      <module name="jlib-collectionX_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
