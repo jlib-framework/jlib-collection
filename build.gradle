@@ -33,7 +33,3 @@ ext.detailedDescription = 'jlib library providing new collection types'
 
 apply from: 'jlib.gradle'
 
-repositories {
-    mavenLocal()
-}
-
